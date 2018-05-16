@@ -4,6 +4,8 @@ My vim configuration for JavaScript development. Dependencies availalble:
 - yarn 1.60
 - npm 5.6.0
 - node 8.x
+
+![vim-ide Demo](https://i.imgur.com/3y1jq8A.gif)
  
 Vim sessions can be stored if the `/home/node/.vim/sessions` is mapped to a volume.
 Today only one session can be saved, because the name of the session refer to the `WORKDIR` (`/home/node/app`).
@@ -13,8 +15,9 @@ So all sessions rewrite the `app.node.home.vim` file.
   - `docker run -ti --rm -v $(pwd):/home/node/app shenron/vim-ide`
 
 ### Install without Docker
-If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX), check mandatory 
-dependencies and run `host-install`
+If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX), 
+
+1. check mandatory dependencies
 - python
 - git
 - cmake
@@ -22,6 +25,11 @@ dependencies and run `host-install`
 - editorconfig
 - jsctags `(from npm install -g jsctags)`
 - tstags `(from npm install -g git+https://github.com/Perlence/tstags.git)`
+
+2. clone the project in `~/.vim/`
+`git clone https://github.com/shenron/docker-vim-ide.git ~/.vim/`
+
+3. run `cd ~/.vim/ && ./host-install`
 
 
 ######  If some troubles with your display try to open the `bash` and launch vim manually 
