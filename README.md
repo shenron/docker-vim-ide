@@ -66,33 +66,33 @@ If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX)
 
 ### Shortcuts
 - tabs navigation
-  > nnoremap <S-Tab> :tabprevious<CR>
+  > `nnoremap <S-Tab> :tabprevious<CR>`
 
-  > nnoremap <Tab> :tabnext<CR>
+  > `nnoremap <Tab> :tabnext<CR>`
 
 - NerdTree toggle
-  > map <silent> <C-o> :NERDTreeToggle<CR>
+  > `map <silent> <C-o> :NERDTreeToggle<CR>`
 
-  > map <silent> <C-f> :NERDTreeFind<CR>
+  > `map <silent> <C-f> :NERDTreeFind<CR>`
 
 - tagbar
-  > nmap <C-g> :TagbarToggle<CR>
+  > `nmap <C-g> :TagbarToggle<CR>`
 
 - Gundo toggle
-  > map <silent> <C-h> :GundoToggle<CR>
+  > `map <silent> <C-h> :GundoToggle<CR>`
 
 - show buffer
-  > :nnoremap <localleader>b :ls<CR>:buffer<Space>
+  > `:nnoremap <localleader>b :ls<CR>:buffer<Space>`
 
 - marks
-  > :nnoremap <localleader>m :<CR>:DoShowMarks<CR>
+  > `:nnoremap <localleader>m :<CR>:DoShowMarks<CR>`
 
-  > :nnoremap <localleader>m! :<CR>:NoShowMarks<CR>
+  > `:nnoremap <localleader>m! :<CR>:NoShowMarks<CR>`
 
 - delete marks
-  > :delm! | delm A-Z0-9
+  > `:delm! | delm A-Z0-9`
 
 - sessions
-  > :nnoremap <localleader>q :<CR>:execute MakeSession()<CR>
+  > `:nnoremap <localleader>q :<CR>:execute MakeSession()<CR>`
 
-  > :nnoremap <localleader>o :<CR>:execute OpenSession()<CR>
+  > `:nnoremap <localleader>o :<CR>:execute OpenSession()<CR>`
