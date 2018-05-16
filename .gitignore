@@ -1,0 +1,5 @@
+autoload
+backup
+plugged
+sessions
+sessions/.gitkeep
