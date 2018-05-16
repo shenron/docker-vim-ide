@@ -90,7 +90,8 @@ RUN apk --no-cache add \
   ctags \
   python \
   ncurses \
-  editorconfig
+  editorconfig \
+  screen
 
 # install npm dependencies
 # for tagbar vim plugin

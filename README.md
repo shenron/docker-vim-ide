@@ -4,6 +4,7 @@ My vim configuration for JavaScript development. Dependencies availalble:
 - yarn 1.60
 - npm 5.6.0
 - node 8.x
+- screen (to run in backgroud webpack dev server or something else ...)
 
 ![vim-ide Demo](https://i.imgur.com/3y1jq8A.gif)
 ###### (demo: auto autocomplete, NERDTree, tagbar, Gundo and save/restore session)
