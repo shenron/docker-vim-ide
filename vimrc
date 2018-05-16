@@ -266,6 +266,7 @@ let g:tagbar_type_typescript = {
 " Tern
 """""""""""""""""""""""""""""""
 let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
 
 
 """""""""""""""""""""""""""""""
@@ -286,11 +287,11 @@ nmap <C-g> :TagbarToggle<CR>
 map <silent> <C-h> :GundoToggle<CR>
 
 " show buffer
-:nnoremap ,b :ls<CR>:buffer<Space>
+:nnoremap <localleader>b :ls<CR>:buffer<Space>
 
 " marks
-:nnoremap ,m :<CR>:DoShowMarks<CR>
-:nnoremap ,m! :<CR>:NoShowMarks<CR>
+:nnoremap <localleader>m :<CR>:DoShowMarks<CR>
+:nnoremap <localleader>m! :<CR>:NoShowMarks<CR>
 
 " delete marks
 :delm! | delm A-Z0-9
@@ -300,7 +301,7 @@ map <silent> <C-h> :GundoToggle<CR>
 """""""""""""""""""""""""""""""
 function! MakeSession()
   exe "NERDTreeClose"
-  let b:sessiondir = '~/.vim/sessions'
+  let b:sessiondir = '$HOME/.vim/sessions'
   let b:filename = split(getcwd(), '/')
   let b:filename = b:filename[-1] . '-' . b:filename[-2] . '-' .b:filename[-3]
   let b:filename = b:sessiondir . '/' . b:filename . '.vim'
@@ -309,7 +310,7 @@ function! MakeSession()
 endfunction
 
 function! OpenSession()
-  let b:sessiondir = '~/.vim/sessions'
+  let b:sessiondir = '$HOME/.vim/sessions'
   let b:filename = split(getcwd(), '/')
   let b:filename = b:filename[-1] . '-' . b:filename[-2] . '-' .b:filename[-3]
   let b:filename = b:sessiondir . '/' . b:filename . '.vim'
@@ -318,8 +319,8 @@ function! OpenSession()
 endfunction
 
 function! ListSessions()
-  exe "!ls -1 ~/.vim/sessions/ "
+  exe "!ls -1 $HOME/.vim/sessions/ "
 endfunction
 
-:nnoremap ,q :<CR>:execute MakeSession()<CR>
-:nnoremap ,o :<CR>:execute OpenSession()<CR>
+:nnoremap <localleader>q :<CR>:execute MakeSession()<CR>
+:nnoremap <localleader>o :<CR>:execute OpenSession()<CR>
