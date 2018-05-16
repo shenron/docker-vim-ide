@@ -66,12 +66,14 @@ If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX)
 
 ### Shortcuts
 - tabs navigation
- > nnoremap <S-Tab> :tabprevious<CR>
- > nnoremap <Tab> :tabnext<CR>
+  > nnoremap <S-Tab> :tabprevious<CR>
+
+  > nnoremap <Tab> :tabnext<CR>
 
 - NerdTree toggle
   > map <silent> <C-o> :NERDTreeToggle<CR>
-map <silent> <C-f> :NERDTreeFind<CR>
+
+  > map <silent> <C-f> :NERDTreeFind<CR>
 
 - tagbar
   > nmap <C-g> :TagbarToggle<CR>
@@ -84,6 +86,7 @@ map <silent> <C-f> :NERDTreeFind<CR>
 
 - marks
   > :nnoremap <localleader>m :<CR>:DoShowMarks<CR>
+
   > :nnoremap <localleader>m! :<CR>:NoShowMarks<CR>
 
 - delete marks
@@ -91,4 +94,5 @@ map <silent> <C-f> :NERDTreeFind<CR>
 
 - sessions
   > :nnoremap <localleader>q :<CR>:execute MakeSession()<CR>
+
   > :nnoremap <localleader>o :<CR>:execute OpenSession()<CR>
