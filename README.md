@@ -6,6 +6,7 @@ My vim configuration for JavaScript development. Dependencies availalble:
 - node 8.x
 
 ![vim-ide Demo](https://i.imgur.com/3y1jq8A.gif)
+###### (demo: auto autocomplete, NERDTree, tagbar, Gundo and save/restore session)
  
 Vim sessions can be stored if the `/home/node/.vim/sessions` is mapped to a volume.
 Today only one session can be saved, because the name of the session refer to the `WORKDIR` (`/home/node/app`).
