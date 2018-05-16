@@ -18,7 +18,7 @@ RUN cd /opt/ \
     --disable-netbeans \
     --enable-multibyte \
     --enable-pythoninterp \
-    --with-features=big \
+    --with-features=huge \
     --with-python-config-dir=/usr/lib/python2.7/config \
   && make \
   && make install
@@ -104,6 +104,11 @@ RUN chown $UID:$GID -R $UHOME
 
 # before the install of all other plugins, set user with good $PATH
 USER node
+
+# add "hello" banner
+ADD banner.txt $UHOME/banner.txt
+
+RUN echo "cat \$HOME/banner.txt" >> $UHOME/.bashrc
 
 # add global editorconfig
 ADD editorconfig $UHOME/.editorconfig
