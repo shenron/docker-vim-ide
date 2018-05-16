@@ -1,0 +1,126 @@
+#!/bin/bash
+
+# Script to install `vim-ide` on Gnu Linux / OSX without Docker
+
+# Check dependences
+# vim has to be compiled with python support
+# OSX: brew install vim --with-python3
+
+# deps:
+# > python
+# > git
+# > cmake
+# > ctags
+# > editorconfig
+# > jsctags (from npm install -g jsctags)
+# > tstags (from npm install -g git+https://github.com/Perlence/tstags.git)
+
+err=0
+if ! [ -x "$(command -v python)" ]; then
+  echo 'Error: python is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v git)" ]; then
+  echo 'Error: git is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v cmake)" ]; then
+  echo 'Error: cmake is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v ctags)" ]; then
+  echo 'Error: ctags is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v editorconfig)" ]; then
+  echo 'Error: editorconfig is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v jsctags)" ]; then
+  echo 'Error: jsctags is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v tstags)" ]; then
+  echo 'Error: tstags is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if [ $err -gt 0 ]; then
+  echo "Resolve dependencies before try to install"
+  exit
+fi
+
+current_path=`pwd`
+
+if [ -d ./plugged ]; then
+  read -p "Already install, do you want to reinstall?" yn
+  case ${yn:0:1} in
+    y|Y )
+      rm -rf ./plugged
+      ;;
+    * )
+      echo "Continue to install"
+      ;;
+  esac
+fi
+
+# init plugin folder
+mkdir ./plugged
+
+# plugin manager
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# YouCompleteMe
+if [ ! -d $HOME/.vim/plugged/YouCompleteMe ]; then
+cd $HOME/.vim/plugged \
+  && git clone --depth 1  https://github.com/Valloric/YouCompleteMe \
+  && cd YouCompleteMe \
+  && git submodule update --init --recursive \
+  && $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer
+fi
+
+# tern
+if [ ! -d $HOME/.vim/plugged/tern_for_vim ]; then
+  cd $HOME/.vim/plugged \
+    && git clone https://github.com/ternjs/tern_for_vim.git \
+    && cd tern_for_vim \
+    && npm install
+fi
+
+# vimproc
+if [ ! -d $HOME/.vim/plugged/vimproc.vim ]; then
+  cd $HOME/.vim/plugged \
+    && git clone https://github.com/Shougo/vimproc.vim.git \
+    && cd vimproc.vim \
+    && make
+fi
+
+# theme
+if [ ! -d $HOME/.vim/plugged/gruvbox ]; then
+  cd $HOME/.vim/plugged \
+    && git clone https://github.com/morhetz/gruvbox.git
+fi
+
+# Cleanup
+rm -rf \
+  $HOME/bundle/YouCompleteMe/third_party/ycmd/clang_includes \
+  $HOME/bundle/YouCompleteMe/third_party/ycmd/cpp
+
+# add global editorconfig
+echo "Copy 'editorconfig' ... OK"
+cd $current_path
+cp editorconfig $HOME/.editorconfig
+
+# add global tern-project config
+echo "Copy tern-project ... OK"
+cp tern-project $HOME/.tern-project
+
+# install all vim plugins
+vim +PlugInstall +qall

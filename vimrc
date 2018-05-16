@@ -47,12 +47,12 @@ set expandtab
 """"""""""""""""""""""""""""""
 set backup
 " backup folder: ~/.vim/backup
-if filewritable(expand("$UHOME/.vim/backup")) == 2
-  set backupdir=$UHOME/.vim/backup
+if filewritable(expand("$HOME/.vim/backup")) == 2
+  set backupdir=$HOME/.vim/backup
 else
   if has("unix") || has("win32unix")
-    call system("mkdir $UHOME/.vim/backup -p")
-    set backupdir=$UHOME/.vim/backup
+    call system("mkdir $HOME/.vim/backup -p")
+    set backupdir=$HOME/.vim/backup
   endif
 endif
 
@@ -93,7 +93,7 @@ set ttyfast
 """""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""
-call plug#begin('$UHOME/.vim/plugged')
+call plug#begin('$HOME/.vim/plugged')
 
 " for JS
 Plug 'pangloss/vim-javascript'

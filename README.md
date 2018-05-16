@@ -5,13 +5,25 @@ My vim configuration for JavaScript development. Dependencies availalble:
 - npm 5.6.0
 - node 8.x
  
-Vim sessions can be store if the `/home/node/.vim/sessions` is mapped to a volume
-(Only one session is saved, because the name of the session is link to the `WORKDIR` `/home/node/app`)
+Vim sessions can be stored if the `/home/node/.vim/sessions` is mapped to a volume
+(today only one session is saved, because the name of the session is link to the `WORKDIR` `/home/node/app`)
 
  ### Run the container:
   - `docker run -ti --rm -v $(pwd):/home/node/app shenron/vim-ide`
 
-######  If some troubles with the display try to open the bash and launch vim manually 
+### Install without Docker
+If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX), check mandatory 
+dependencies and run `host-install`
+- python
+- git
+- cmake
+- ctags
+- editorconfig
+- jsctags (from npm install -g jsctags)
+- tstags (from npm install -g git+https://github.com/Perlence/tstags.git)
+
+
+######  If some troubles with your display try to open the `bash` and launch vim manually 
  - `docker run -ti --rm -v $(pwd):/home/node/app vim-ide /bin/bash`  
  - `vim`
 
