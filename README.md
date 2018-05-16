@@ -15,6 +15,10 @@ So all sessions rewrite the `app.node.home.vim` file.
  ### Run the container:
   - `docker run -ti --rm -v $(pwd):/home/node/app shenron/vim-ide`
 
+######  If some troubles with your display try to open the `bash` and launch vim manually 
+ - `docker run -ti --rm -v $(pwd):/home/node/app vim-ide /bin/bash`  
+ - `vim`
+
 ### Install without Docker
 If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX), 
 
@@ -32,10 +36,6 @@ If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX)
 
 3. run `cd ~/.vim/ && ./host-install`
 
-
-######  If some troubles with your display try to open the `bash` and launch vim manually 
- - `docker run -ti --rm -v $(pwd):/home/node/app vim-ide /bin/bash`  
- - `vim`
 
  ### Plugins
 1. pangloss/vim-javascript
