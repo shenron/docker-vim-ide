@@ -35,6 +35,7 @@ set number
 set backspace=indent,eol,start
 
 " show existing tab with 2 spaces width
+set softtabstop=2
 set tabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
@@ -273,8 +274,22 @@ let g:tern_show_argument_hints='on_hold'
 " shortcuts
 """""""""""""""""""""""""""""""
 " tabs navigation
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <S-Tab> :tabprevious<CR>
+nnoremap <Tab> :tabnext<CR>
+
+" outindent spaces with tab
+inoremap <S-Tab> <C-D>
+
+" outindent in virtual mode
+vnoremap < <gv
+
+" indent in virtual mode
+vnoremap > >gv
+
+" alignment of file
+:nnoremap <localleader>= <Esc>gg=G<C-o>
+
+
 
 " NerdTree
 map <silent> <C-o> :NERDTreeToggle<CR>
