@@ -124,3 +124,9 @@ cp tern-project $HOME/.tern-project
 
 # install all vim plugins
 vim +PlugInstall +qall
+
+# create symbolic vim link
+echo "Create symbolic vim link ... OK"
+cd $HOME
+rm -f $HOME/.vimrc
+ln -s $current_path/vimrc $HOME/.vimrc
