@@ -108,7 +108,8 @@ USER node
 # add "hello" banner
 ADD banner.txt $UHOME/banner.txt
 
-RUN echo "cat \$HOME/banner.txt" >> $UHOME/.bashrc
+# add bashrc prompt
+ADD bashrc $UHOME/.bashrc
 
 # add global editorconfig
 ADD editorconfig $UHOME/.editorconfig
