@@ -97,7 +97,8 @@ RUN apk --no-cache add \
 # for tagbar vim plugin
 RUN npm install -g \
   jsctags \
-  git+https://github.com/Perlence/tstags.git
+  git+https://github.com/Perlence/tstags.git \
+  flow-bin
 
 # fix home folder rights
 RUN chown $UID:$GID -R $UHOME

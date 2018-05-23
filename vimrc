@@ -99,6 +99,14 @@ call plug#begin('$HOME/.vim/plugged')
 " for JS
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
+Plug 'flowtype/vim-flow', {
+      \ 'autoload': {
+      \     'filetypes': 'javascript'
+      \ },
+      \ 'build': {
+      \     'mac': 'npm install -g flow-bin',
+      \     'unix': 'npm install -g flow-bin'
+      \ }}
 
 " coding style
 Plug 'editorconfig/editorconfig-vim'
@@ -217,7 +225,7 @@ let g:airline#extensions#ale#enabled = 1
 
 " enable ale for js
 let g:ale_linters = {
-\   'javascript': ['eslint'],
+\   'javascript': ['eslint', 'flow'],
 \}
 
 " Enable completion where available.
@@ -268,6 +276,17 @@ let g:tagbar_type_typescript = {
 """""""""""""""""""""""""""""""
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
+
+
+""""""""""""""""""""""""""""""
+" Flow
+""""""""""""""""""""""""""""""
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" disable typecheking on `:w`
+" by default use ale
+let g:flow#enable = 0
 
 
 """""""""""""""""""""""""""""""

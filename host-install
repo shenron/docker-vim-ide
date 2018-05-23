@@ -14,6 +14,7 @@
 # > editorconfig
 # > jsctags (from npm install -g jsctags)
 # > tstags (from npm install -g git+https://github.com/Perlence/tstags.git)
+# > flow
 
 err=0
 if ! [ -x "$(command -v python)" ]; then
@@ -48,6 +49,11 @@ fi
 
 if ! [ -x "$(command -v tstags)" ]; then
   echo 'Error: tstags is not installed.' >&2
+  err=$((err + 1))
+fi
+
+if ! [ -x "$(command -v flow)" ]; then
+  echo 'Error: flow is not installed.' >&2
   err=$((err + 1))
 fi
 
@@ -119,7 +125,7 @@ cd $current_path
 cp editorconfig $HOME/.editorconfig
 
 # add global tern-project config
-echo "Copy tern-project ... OK"
+echo "Copy 'tern-project' ... OK"
 cp tern-project $HOME/.tern-project
 
 # install all vim plugins
