@@ -296,9 +296,6 @@ let g:flow#enable = 0
 nnoremap <S-Tab> :tabprevious<CR>
 nnoremap <Tab> :tabnext<CR>
 
-" outindent spaces with tab
-inoremap <S-Tab> <C-D>
-
 " outindent in virtual mode
 vnoremap < <gv
 
@@ -307,8 +304,6 @@ vnoremap > >gv
 
 " alignment of file
 :nnoremap <localleader>= <Esc>gg=G<C-o>
-
-
 
 " NerdTree
 map <silent> <C-o> :NERDTreeToggle<CR>
@@ -323,12 +318,24 @@ map <silent> <C-h> :GundoToggle<CR>
 " show buffer
 :nnoremap <localleader>b :ls<CR>:buffer<Space>
 
+" move line (normal/insert mode)
+nnoremap <C-Down> :m-1<CR>
+nnoremap <C-Up> :m-2<CR>
+nnoremap <C-Down> :m+<CR>
+inoremap <C-Up> <Esc>:m-2<CR>
+inoremap <C-Down> <Esc>:m+<CR>
+
+" move lines (visual mode)
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+
 " marks
 :nnoremap <localleader>m :<CR>:DoShowMarks<CR>
 :nnoremap <localleader>m! :<CR>:NoShowMarks<CR>
 
 " delete marks
 :delm! | delm A-Z0-9
+
 
 """""""""""""""""""""""""""""""
 " sessions
