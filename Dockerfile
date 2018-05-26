@@ -96,7 +96,7 @@ RUN apk --no-cache add \
 # install npm dependencies
 # for tagbar vim plugin
 RUN npm install -g \
-  jsctags \
+  git+https://github.com/ramitos/jsctags.git \
   git+https://github.com/Perlence/tstags.git \
   flow-bin
 
