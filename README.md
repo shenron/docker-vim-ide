@@ -57,13 +57,16 @@ If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX)
 16. jacquesbh/vim-showmarks
 17. sjl/gundo.vim
 18. vim-airline/vim-airline
+19. severin-lemaignan/vim-minimap
+20. tpope/vim-fugitive
+
 
 ### Themes
-19. NLKNguyen/papercolor-theme
-20. crusoexia/vim-monokai
-21. morhetz/gruvbox
-22. acarapetis/vim-colors-github
-23. vim-airline/vim-airline-themes
+1. NLKNguyen/papercolor-theme
+2. crusoexia/vim-monokai
+3. morhetz/gruvbox
+4. acarapetis/vim-colors-github
+5. vim-airline/vim-airline-themes
 
 ### Shortcuts
 - tabs navigation
@@ -75,6 +78,13 @@ If for some reasons you want to install `vim-ide` on your host (Gnu Linux / OSX)
   > `map <silent> <C-o> :NERDTreeToggle<CR>`
 
   > `map <silent> <C-f> :NERDTreeFind<CR>`
+
+- Align file
+  > `:nnoremap <localleader>= <Esc>gg=G<C-o>`
+
+- outindent /indent
+  > `vnoremap < <gv` 
+  > `vnoremap > >gv`
 
 - tagbar
   > `nmap <C-g> :TagbarToggle<CR>`
