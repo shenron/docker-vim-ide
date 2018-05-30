@@ -42,6 +42,9 @@ set shiftwidth=2
 " On pressing tab, insert 2 spaces
 set expandtab
 
+" enable mouse scroll
+:set mouse=a
+
 
 """"""""""""""""""""""""""""""
 " enable backup
@@ -111,6 +114,9 @@ Plug 'flowtype/vim-flow', {
 " coding style
 Plug 'editorconfig/editorconfig-vim'
 
+" Minimap like sublime text
+Plug 'severin-lemaignan/vim-minimap'
+
 " autocomplete
 Plug 'Valloric/YouCompleteMe'
 
@@ -123,6 +129,9 @@ Plug 'w0rp/ale'
 
 " show git diff
 Plug 'airblade/vim-gitgutter'
+
+" git
+Plug 'tpope/vim-fugitive'
 
 " multiple selection
 Plug 'terryma/vim-multiple-cursors'
