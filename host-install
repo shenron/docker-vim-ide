@@ -77,7 +77,7 @@ if [ -d ./plugged ]; then
 fi
 
 # init plugin folder
-mkdir ./plugged
+mkdir -p ./plugged
 
 # plugin manager
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
