@@ -12,7 +12,7 @@
 # > cmake
 # > ctags
 # > editorconfig
-# > jsctags (from npm install -g git+https://github.com/ramitos/jsctags.git )
+# > jsctags (from npm install -g git+https://github.com/shenron/jsctags )
 # > tstags (from npm install -g git+https://github.com/Perlence/tstags.git)
 # > flow
 
