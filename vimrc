@@ -114,6 +114,9 @@ Plug 'flowtype/vim-flow', {
 " coding style
 Plug 'editorconfig/editorconfig-vim'
 
+" auto close (x)html tags
+Plug 'alvan/vim-closetag'
+
 " Minimap like sublime text
 Plug 'severin-lemaignan/vim-minimap'
 
@@ -143,7 +146,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'ternjs/tern_for_vim'
 
 " automatic closing of quotes, parenthesis, brackets
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 
 " search / open file
 Plug 'ctrlpvim/ctrlp.vim'
@@ -186,6 +189,13 @@ let g:airline_powerline_fonts = 1
 if has('python3')
   let g:gundo_prefer_python3 = 1
 endif
+
+
+"""""""""""""""""""""""""""""""
+" Config close tag
+"""""""""""""""""""""""""""""""
+let g:closetag_filenames = '*.xhtml,*.html,*.vue,*.jsx'
+let g:closetag_shortcut = '>'
 
 
 """""""""""""""""""""""""""""""
