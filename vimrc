@@ -241,6 +241,9 @@ let g:EditorConfig_core_mode = 'python_external'
 """""""""""""""""""""""""""""""
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_info = '⚠'
+let g:ale_sign_warning = '⚠'
 
 " enable ale for js
 let g:ale_linters = {
@@ -256,8 +259,9 @@ let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""
 let g:gitgutter_highlight_lines = 0
 
-" reduce time from 4s to 250ms to refresh gitgutter
-set updatetime=250
+" reduce time from 4s to 2500ms to refresh gitgutter
+" (should) let enough time to ale to show errors/warning, else gitgutter override signs
+set updatetime=2500
 
 
 """""""""""""""""""""""""""""""
