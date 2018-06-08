@@ -61,6 +61,9 @@ else
 endif
 
 
+" fix webpack watch
+set backupcopy=yes
+
 " set history
 set history=100
 
