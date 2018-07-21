@@ -7,7 +7,7 @@
 # OSX: brew install vim --with-python3
 
 # deps:
-# > python
+# > python2 python3
 # > git
 # > cmake
 # > ctags
@@ -17,8 +17,8 @@
 # > flow
 
 err=0
-if ! [ -x "$(command -v python)" ]; then
-  echo 'Error: python is not installed.' >&2
+if ! [ -x "$(command -v python2)" ]; then
+  echo 'Error: python2 is not installed.' >&2
   err=$((err + 1))
 fi
 
@@ -89,7 +89,7 @@ cd $HOME/.vim/plugged \
   && git clone --depth 1  https://github.com/Valloric/YouCompleteMe \
   && cd YouCompleteMe \
   && git submodule update --init --recursive \
-  && $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer
+  && python2 $HOME/.vim/plugged/YouCompleteMe/install.py --js-completer
 fi
 
 # tern

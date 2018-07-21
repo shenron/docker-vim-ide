@@ -391,3 +391,8 @@ endfunction
 
 :nnoremap <localleader>q :<CR>:execute MakeSession()<CR>
 :nnoremap <localleader>o :<CR>:execute OpenSession()<CR>
+
+" fix 'imp module is deprecated in favour of importlib'
+if has('python3')
+  silent! python3 1
+endif
