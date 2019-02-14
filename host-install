@@ -11,10 +11,10 @@
 # > git
 # > cmake
 # > ctags
-# > editorconfig
-# > jsctags (from npm install -g git+https://github.com/shenron/jsctags )
+# > editorconfig-core-c
+# > jsctags (from npm install -g git+https://github.com/sergioramos/jsctags)
 # > tstags (from npm install -g git+https://github.com/Perlence/tstags.git)
-# > flow
+# > flow-bin
 
 err=0
 if ! [ -x "$(command -v python2)" ]; then
