@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""
 " Base conf
 """"""""""""""""""""""""""""""
+
 scriptencoding UTF-8
 
 " enable theme
@@ -185,6 +186,9 @@ call plug#end()
 " let g:airline_theme='simple'
 let g:airline_powerline_fonts = 1
 
+"""""""""""""""""""""""""""""""
+" NerdTree
+"""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""
 " Gundo
@@ -215,7 +219,6 @@ set bg=dark
 let g:indentLine_char = '|'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
-
 
 """""""""""""""""""""""""""""""
 " config editorconfig
@@ -250,8 +253,8 @@ let g:ale_sign_warning = '⚠'
 
 " enable ale for js
 let g:ale_linters = {
-\   'javascript': ['eslint', 'flow'],
-\}
+      \   'javascript': ['eslint', 'flow'],
+      \}
 
 " Enable completion where available.
 let g:ale_completion_enabled = 1
@@ -278,23 +281,23 @@ let g:ctrlp_working_path_mode = 0
 " config ctags
 """""""""""""""""""""""""""""""
 let g:tagbar_type_typescript = {
-  \ 'ctagsbin' : 'tstags',
-  \ 'ctagsargs' : '-f-',
-  \ 'kinds': [
-    \ 'e:enums:0:1',
-    \ 'f:function:0:1',
-    \ 't:typealias:0:1',
-    \ 'M:Module:0:1',
-    \ 'I:import:0:1',
-    \ 'i:interface:0:1',
-    \ 'C:class:0:1',
-    \ 'm:method:0:1',
-    \ 'p:property:0:1',
-    \ 'v:variable:0:1',
-    \ 'c:const:0:1',
-  \ ],
-  \ 'sort' : 0
-\ }
+      \ 'ctagsbin' : 'tstags',
+      \ 'ctagsargs' : '-f-',
+      \ 'kinds': [
+      \ 'e:enums:0:1',
+      \ 'f:function:0:1',
+      \ 't:typealias:0:1',
+      \ 'M:Module:0:1',
+      \ 'I:import:0:1',
+      \ 'i:interface:0:1',
+      \ 'C:class:0:1',
+      \ 'm:method:0:1',
+      \ 'p:property:0:1',
+      \ 'v:variable:0:1',
+      \ 'c:const:0:1',
+      \ ],
+      \ 'sort' : 0
+      \ }
 
 
 """""""""""""""""""""""""""""""
