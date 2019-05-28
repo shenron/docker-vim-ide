@@ -1,9 +1,9 @@
 # `shenron/vim-ide:latest`
 
 My vim configuration for JavaScript development. Dependencies availalble:
-- yarn 1.70
-- npm 5.6.0
-- node 8.x
+- yarn 1.16.0
+- npm 6.4.1
+- node 10.x
 - screen (to run in backgroud webpack dev server or something else ...)
 
 ![vim-ide Demo](https://i.imgur.com/3y1jq8A.gif)

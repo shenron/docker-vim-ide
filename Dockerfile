@@ -1,4 +1,4 @@
-FROM node:8-alpine as builder
+FROM node:10-alpine as builder
 
 # YouCompleteMe dependencies
 RUN apk --no-cache add --virtual build-deps \
