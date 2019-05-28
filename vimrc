@@ -125,7 +125,7 @@ Plug 'alvan/vim-closetag'
 Plug 'severin-lemaignan/vim-minimap'
 
 " autocomplete
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " async tasks
 Plug 'Shougo/vimproc.vim'
@@ -219,12 +219,12 @@ set bg=dark
 let g:indentLine_char = '|'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
 """""""""""""""""""""""""""""""
 " config editorconfig
 """""""""""""""""""""""""""""""
 " let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
-let g:EditorConfig_core_mode = 'python_external'
 
 
 """""""""""""""""""""""""""""""
