@@ -4,6 +4,9 @@
 
 scriptencoding UTF-8
 
+" disable vim startup message
+set shortmess=I " Read :help shortmess for everything else.
+
 " enable theme
 syntax enable
 
@@ -154,7 +157,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " search / open file
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
 
 " browse tags (class / var ...)
 Plug 'majutsushi/tagbar'
@@ -170,20 +173,21 @@ Plug 'sjl/gundo.vim'
 
 " nice bottom bar with info
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Themes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'crusoexia/vim-monokai'
 Plug 'morhetz/gruvbox'
 Plug 'acarapetis/vim-colors-github'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""
 " config plugin airline
 """""""""""""""""""""""""""""""
-" let g:airline_theme='simple'
+let g:airline_theme='papercolor'
+let g:airline_solarized_bg='light'
 let g:airline_powerline_fonts = 1
 
 """""""""""""""""""""""""""""""
@@ -206,11 +210,15 @@ let g:closetag_shortcut = '>'
 
 
 """""""""""""""""""""""""""""""
-" config gruvbox theme
+" config theme
 """""""""""""""""""""""""""""""
-colorscheme gruvbox
-set bg=dark
-" set bg=light
+colorscheme PaperColor
+" colorscheme monokai
+" colorscheme gruvbox
+" colorscheme github
+
+" set bg=dark
+set bg=light
 
 
 """""""""""""""""""""""""""""""
@@ -364,7 +372,6 @@ vnoremap <C-Up> :m '<-2<CR>gv=gv
 
 " delete marks
 :delm! | delm A-Z0-9
-
 
 """""""""""""""""""""""""""""""
 " sessions
