@@ -194,6 +194,22 @@ let g:airline_solarized_bg='light'
 let g:airline_powerline_fonts = 1
 
 """""""""""""""""""""""""""""""
+" CtrlP auto cache clearing
+"""""""""""""""""""""""""""""""
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
+
+"""""""""""""""""""""""""""""""
 " NerdTree
 """""""""""""""""""""""""""""""
 
