@@ -253,6 +253,13 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 """""""""""""""""""""""""""""""
 " let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 
+"""""""""""""""""""""""""""""""
+" config vim-javascript
+"""""""""""""""""""""""""""""""
+" let g:javascript_conceal_function = "ƒ"
+" let g:javascript_conceal_arrow_function = "⇒"
+" let g:javascript_plugin_flow = 1
+" set conceallevel=1
 
 """""""""""""""""""""""""""""""
 " config syntastic
