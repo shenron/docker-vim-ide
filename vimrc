@@ -121,7 +121,7 @@ Plug 'flowtype/vim-flow', {
 " coding style
 Plug 'editorconfig/editorconfig-vim'
 
-" h, j, k, l rezie
+" Ctrl + E: h, j, k, l rezie
 Plug 'simeji/winresizer'
 
 " auto close (x)html tags
