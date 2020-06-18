@@ -7,7 +7,7 @@
 # OSX: brew install vim --with-python3
 
 # deps:
-# > python2 python3
+# > python3
 # > git
 # > cmake
 # > ctags
@@ -17,8 +17,8 @@
 # > flow-bin
 
 err=0
-if ! [ -x "$(command -v python2)" ]; then
-  echo 'Error: python2 is not installed.' >&2
+if ! [ -x "$(command -v python3)" ]; then
+  echo 'Error: python3 is not installed.' >&2
   err=$((err + 1))
 fi
 
