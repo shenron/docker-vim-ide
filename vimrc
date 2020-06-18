@@ -152,6 +152,9 @@ Plug 'terryma/vim-multiple-cursors'
 " TypeScript syntaz
 Plug 'leafgarland/typescript-vim'
 
+" Golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " rename variables
 Plug 'ternjs/tern_for_vim'
 
@@ -160,7 +163,8 @@ Plug 'jiangmiao/auto-pairs'
 
 " search / open file
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+" Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " browse tags (class / var ...)
 Plug 'majutsushi/tagbar'
