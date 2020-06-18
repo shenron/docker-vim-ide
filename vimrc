@@ -121,7 +121,7 @@ Plug 'flowtype/vim-flow', {
 " coding style
 Plug 'editorconfig/editorconfig-vim'
 
-" h, j, k, l rezie
+" Ctrl + E: h, j, k, l rezie
 Plug 'simeji/winresizer'
 
 " auto close (x)html tags
@@ -198,6 +198,22 @@ let g:airline_solarized_bg='light'
 let g:airline_powerline_fonts = 1
 
 """""""""""""""""""""""""""""""
+" CtrlP auto cache clearing
+"""""""""""""""""""""""""""""""
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
+
+"""""""""""""""""""""""""""""""
 " NerdTree
 """""""""""""""""""""""""""""""
 
@@ -241,6 +257,13 @@ let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 """""""""""""""""""""""""""""""
 " let g:EditorConfig_exec_path = '/usr/bin/editorconfig'
 
+"""""""""""""""""""""""""""""""
+" config vim-javascript
+"""""""""""""""""""""""""""""""
+" let g:javascript_conceal_function = "ƒ"
+" let g:javascript_conceal_arrow_function = "⇒"
+" let g:javascript_plugin_flow = 1
+" set conceallevel=1
 
 """""""""""""""""""""""""""""""
 " config syntastic
